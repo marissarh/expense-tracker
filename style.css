@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(135deg,#56bdd5, #a8d5d4);
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(73, 80, 80);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f2e9e9;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
