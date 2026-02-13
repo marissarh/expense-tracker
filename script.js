@@ -26,8 +26,8 @@ function addTransaction(e) {
 
     localStorage.setItem("transactions", JSON.stringify(transactions))
 
-    updateTransactionList();
-    updateSummary();
+    //updateTransactionList();
+    //updateSummary();
     transactionFormEl.reset()
 }
 
@@ -45,5 +45,14 @@ function updateTransactionList(){
 function createTransactionElement(transaction) {
     const li = document.createElement("li")
     li.classList.add("transaction")
-    li.classList.add(transaction.amount >0)
+    li.classList.add(transaction.amount >0 ? "income" : "expense")
+
+//update the amount formatting
+    li.innerHTML = `
+    <span>${transaction.description}</span>
+    <span>${transaction.amount}
+    <button class="delete-btn" onclick="removeTransaction(${transaction.id})">x</button>
+    </span>`;
+
+    return li
 }
