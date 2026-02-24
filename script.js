@@ -54,5 +54,26 @@ function createTransactionElement(transaction) {
     <button class="delete-btn" onclick="removeTransaction(${transaction.id})">x</button>
     </span>`;
 
-    return li
+    return li;
+}
+
+function updateSummary(){
+    //100, -50, 200, -200 => 50
+    const balance = transactions.reduce((acc, transaction) => acc + transaction.amount ,0)
+
+    const income = transactions
+    .filter((transaction) => transaction.amount >0)
+    .reduce((acc, transaction) => acc + transaction.amount, 0);
+
+    const expense = transactions
+    .filter((transaction) => transaction.amount < 0)
+    .reduce((acc, transaction) => acc + transaction.amount, 0);
+
+    balanceEl.textContent = balance;
+    incomeAmountEl.textContent = income;
+    expenseAmountEl.textContent = expense;
+
+    
+    
+
 }
